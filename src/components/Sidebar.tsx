@@ -4,6 +4,8 @@ import { LuLayoutDashboard, LuUsers, LuMenu, LuX } from "react-icons/lu";
 import { GoPasskeyFill } from "react-icons/go";
 import { useState } from "react";
 
+import backgroundImage from "../assets/role.jpg"; 
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems: MenuItems[] = [
@@ -35,13 +37,17 @@ const Sidebar = () => {
       <aside
         className={`
           fixed md:sticky top-0 left-0 z-40
-          w-64 bg-gray-800 text-white h-screen
+          w-64 text-white h-screen
           transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0 transition-transform duration-200 ease-in-out
           flex flex-col
+          bg-cover bg-center
         `}
+        style={{
+          backgroundImage: `url(${backgroundImage})`, // Set the imported image as background
+        }}
       >
-        <div className="flex items-center p-4 border-b border-gray-700">
+        <div className="flex items-center p-4 border-b border-gray-700 bg-opacity-60">
           <span className="text-xl font-semibold">Admin Panel</span>
         </div>
 
